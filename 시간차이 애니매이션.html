@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .list{
+            width: 1200px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid tomato;
+            position: relative;
+        }
+        
+        .list img{
+            opacity: 0;
+            position: absolute;
+            transition: all 0.3s ease-in-out;
+        }
+        .list img:nth-child(1){
+            left: 200px; top: 50px;
+        }
+        .list img:nth-child(2){
+            left: 500px;
+            top: 60px;
+        }
+        .list img:nth-child(3){
+            left: 300px; top: 30px;
+        }
+        .list img:nth-child(4){
+            left: 300px; top: 100px;
+        }
+
+        .list img.ani{
+            opacity: 1;
+        }
+
+    </style>
+
+
+<script src="js/jquery-3.7.1.js"></script>
+<script>
+    $(function(){
+        $(".list img").each(function(i){
+            setTimeout(function(){
+                $(".list img").eq(i).addClass("ani")
+            }, 1000*i)
+        })//each
+
+        $(".box li").each(function(index){
+            console.log("this index - ", index)
+            console.log("this text - ", $(this).text())
+        })
+
+
+    }) //j
+
+
+
+
+</script> 
+
+
+</head>
+<body>
+    
+    <div class="list">
+        <img src="img/cha01.png" alt="cha">
+        <img src="img/cha02.png" alt="cha">
+        <img src="img/cha03.png" alt="cha">
+        <img src="img/cha04.png" alt="cha">
+    </div>
+
+    <div class="box">
+        <li><a href="#">list1</a></li>
+        <li><a href="#">list2</a></li>
+        <li><a href="#">list3</a></li>
+        <li><a href="#">list4</a></li>
+        <li><a href="#">list5</a></li>
+    </div>
+
+
+</body>
+</html>
